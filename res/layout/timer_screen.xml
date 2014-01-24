@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/current_step_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="91dp"
+        android:padding="4dp"
+        android:text="@string/current_step_name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/current_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/current_step_name"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="time"
+        android:text="00:00:00"
+        android:textSize="30sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/next_step_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/current_time"
+        android:padding="4dp"
+        android:text="@string/next_step_name"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/timer_start_cancel"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/timer_pause"
+        android:layout_alignBottom="@+id/timer_pause"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="34dp"
+        android:text="@string/timer_start"
+        android:textSize="30sp" />
+    <Button
+        android:id="@+id/timer_pause"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/next_step_name"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="46dp"
+        android:text="@string/timer_pause"
+        android:textSize="30sp" />
+
+   
+
+</RelativeLayout>
