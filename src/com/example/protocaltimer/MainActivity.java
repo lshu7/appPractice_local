@@ -1,5 +1,6 @@
 package com.example.protocaltimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -21,11 +22,34 @@ public class MainActivity extends FragmentBuilder {
 		
 		switch (item.getItemId()) {
 		case R.id.action_add:
-			return false;
+			show_detail_screen();
+			return true;
+		case R.id.action_search:
+			show_search_screen();
 		}
-		//return super.onOptionsItemSelected(item);
-		return false;
+		return super.onOptionsItemSelected(item);
+		//return false;
 		
+	}
+
+	private void show_search_screen() {
+		// TODO Auto-generated method stub
+		getSupportFragmentManager().beginTransaction()
+        .replace(R.id.fragmentContainer,
+             new Search_screen())
+             .addToBackStack("SearchFragment")
+             .commit();
+	}
+
+	private void show_detail_screen() {
+		// TODO Auto-generated method stub
+		Log.e("Coco", "in timer screen open to show detail screen!!!");
+		
+		getSupportFragmentManager().beginTransaction()
+        .replace(R.id.fragmentContainer,
+             new Timer_detail_screen())
+             .addToBackStack("DetailFragment")
+             .commit();
 	}
 
 	@Override
